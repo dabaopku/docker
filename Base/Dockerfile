@@ -2,10 +2,8 @@ FROM alpine:3.7
 
 RUN apk update && apk upgrade \
   && apk add ca-certificates \
-  && rm -rf /var/cache/apk/*
+  && apk add bash gawk sed grep bc coreutils \
+  && rm -rf /var/cache/apk \
+  && rm -rf /usr/share/terminfo
 
-run apk add --update zsh git
-run sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-run echo "export PROMPT=Docker$PROMPT" >> ~/.zshrc
-entrypoint /bin/zsh
-
+ENTRYPOINT /bin/bash
