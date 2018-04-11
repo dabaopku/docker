@@ -1,0 +1,10 @@
+FROM dabaopku/docker
+
+RUN \
+apk add --no-cache mongodb
+
+VOLUME /data/db
+EXPOSE 27017
+
+
+CMD ["mongod", "--bind_ip", "0.0.0.0"]
