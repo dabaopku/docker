@@ -1,4 +1,4 @@
-FROM dabaopku/docker
+FROM dabaopku/docker:Base
 
 RUN \
 apk add --no-cache mongodb
