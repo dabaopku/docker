@@ -1,6 +1,6 @@
 FROM dabaopku/docker:Base
 
-RUN apk add --no-cache mysql mysql-client && \
+RUN apk add --no-cache mysql && \
 	addgroup mysql mysql
 
 VOLUME ["/var/lib/mysql"]
