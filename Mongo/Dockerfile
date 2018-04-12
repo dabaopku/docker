@@ -1,6 +1,7 @@
 FROM dabaopku/docker:Base
 
-RUN apk add --no-cache mongodb && \
+RUN apk upgrade --update && \
+    apk add --no-cache mongodb && \
     rm /usr/bin/mongoperf
 
 VOLUME /data/db

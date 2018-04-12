@@ -1,9 +1,10 @@
 FROM dabaopku/docker:Base
 
-RUN apk add --no-cache mysql && \
+RUN apk upgrade --update && \
+    apk add --no-cache mysql && \
 	addgroup mysql mysql
 
-VOLUME ["/var/lib/mysql"]
+VOLUME /var/lib/mysql
 EXPOSE 3306
 
 COPY run.sh /root
