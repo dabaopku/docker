@@ -66,7 +66,11 @@ class MDb {
 			if ($v === "") {//older MongoDB version (maybe before 1.7) allow empty collection name
 				continue;
 			}
-			$collections[] = $db->selectCollection($v);
+			try {
+				$collections[] = $db->selectCollection($v);                                   
+			} catch (Exception $e) {                                                              
+				echo "Name: ", $v, '  Exception: ',  $e->getMessage(), "\n";                  
+			}  
 		}
 		return $collections;
 	}
