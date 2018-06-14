@@ -9,4 +9,4 @@ EXPOSE 27017
 
 COPY run.sh /root
 ENTRYPOINT ["/root/run.sh"]
-CMD ["mongod", "--bind_ip", "0.0.0.0", "--logpath", "/var/log/mongodb"]
+CMD ["mongod", "--bind_ip", "0.0.0.0", "--logpath", "/data/db/mongo.log"]
